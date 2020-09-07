@@ -21,8 +21,8 @@
     <v-list-item two-line>
       <v-list-item-content>
         <v-list-item-title class="text-uppercase font-weight-regular display-2">
-          <span class="logo-mini">{{ $t("ct") }}</span>
-          <span class="logo-normal">{{ $t("tim") }}</span>
+          <span class="logo-mini">CMS</span>
+          <span class="logo-normal">Pages</span>
         </v-list-item-title>
       </v-list-item-content>
     </v-list-item>
@@ -87,38 +87,9 @@
       items: [
         {
           icon: 'mdi-view-dashboard',
-          title: 'dashboard',
-          to: '/dashboard',
+          title: 'Dashboard',
+          to: '/home/dashboard',
         },
-        {
-          group: '/pages',
-          icon: 'mdi-image',
-          title: 'pages',
-          children: [
-
-            {
-              title: 'login',
-              to: 'login',
-            },
-            {
-              title: 'register',
-              to: 'pricing',
-            },
-            {
-              title: 'lock',
-              to: 'lock',
-            },
-            {
-              title: 'user',
-              to: 'user',
-            },
-            {
-              title: 'error',
-              to: '404',
-            },
-          ],
-        },
-
         {
           group: '/home/users',
           icon: 'mdi-account-tie',
@@ -141,17 +112,17 @@
             },
           ],
         },
-        // {
-        //   group: '/kitchens',
-        //   icon: 'mdi-coffee-maker',
-        //   title: 'kitchens.kitchens',
-        //   children: [
-        //     {
-        //       title: 'kitchens.kitchens',
-        //       to: 'kitchens',
-        //     },
-        //   ],
-        // },
+        {
+          group: '/home/site',
+          icon: 'mdi-store',
+          title: 'Solar Power',
+          children: [
+            {
+              title: 'Site',
+              to: 'home',
+            },
+          ],
+        },
         // {
         //   group: '/vendors',
         //   icon: 'mdi-account-tie',

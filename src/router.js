@@ -61,16 +61,16 @@ export default new Router({
           path: 'roles/form',
           component: () => import('@/views/container/Roles/RolesForm'),
         },
-        // Kitchen
+        // site
         {
-          name: 'Kitchens',
-          path: 'kitchens/kitchens',
-          component: () => import('@/views/container/Kitchens/Kitchens'),
+          name: 'Site',
+          path: 'site/home',
+          component: () => import('@/views/container/Sites/Sites'),
 
         },
         {
-          name: 'Kitchens-Edit',
-          path: 'kitchens/kitchens-edit',
+          name: 'Site2',
+          path: 'site/section1',
           component: () => import('@/views/container/Kitchens/Kitchen-Edit/Kitchen-Edit'),
 
         },

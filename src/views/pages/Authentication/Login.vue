@@ -41,12 +41,12 @@
               counter
               @click:append="show1 = !show1"
             />
-<v-select
-prepend-icon="mdi-pencil"
+            <v-select
+              prepend-icon="mdi-pencil"
 
-          :items="items"
-          label="Sitio"
-        ></v-select>
+              :items="items"
+              label="Sitio"
+            />
             <pages-btn
               large
               color=""
