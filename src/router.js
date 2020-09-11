@@ -1,104 +1,128 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from "vue";
+import Router from "vue-router";
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
-  mode: 'hash',
+  mode: "hash",
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
-      component: () => import('@/views/pages/Index'),
+      path: "/",
+      component: () => import("@/views/pages/Index"),
       children: [
         {
-          name: 'Lock',
-          path: 'lock',
-          component: () => import('@/views/pages/Lock'),
+          name: "Lock",
+          path: "lock",
+          component: () => import("@/views/pages/Lock")
         },
         {
-          name: 'Login',
-          path: '',
-          component: () => import('@/views/pages/Authentication/Login'),
+          name: "Login",
+          path: "",
+          component: () => import("@/views/pages/Authentication/Login")
         },
 
         {
-          name: 'Register',
-          path: 'register',
-          component: () => import('@/views/pages/Register'),
-        },
-      ],
+          name: "Register",
+          path: "register",
+          component: () => import("@/views/pages/Register")
+        }
+      ]
     },
     {
-      path: '/home',
-      component: () => import('@/views/container/Index'),
+      path: "/home",
+      component: () => import("@/views/container/Index"),
       children: [
         // Dashboard
         {
-          name: 'Dashboard',
-          path: 'dashboard',
-          component: () => import('@/views/container/Dashboard'),
+          name: "Dashboard",
+          path: "dashboard",
+          component: () => import("@/views/container/Dashboard")
         },
         // Users
         {
-          name: 'Users',
-          path: 'users/users',
-          component: () => import('@/views/container/Users/Users'),
+          name: "Users",
+          path: "users/users",
+          component: () => import("@/views/container/Users/Users")
         },
         {
-          name: 'UsersFrom',
-          path: 'users/form',
-          component: () => import('@/views/container/Users/UsersFrom'),
+          name: "UsersFrom",
+          path: "users/form",
+          component: () => import("@/views/container/Users/UsersFrom")
         },
-         // Roles
-         {
-          name: 'Roles',
-          path: 'roles/roles',
-          component: () => import('@/views/container/Roles/Roles'),
+        // Roles
+        {
+          name: "Roles",
+          path: "roles/roles",
+          component: () => import("@/views/container/Roles/Roles")
         },
         {
-          name: 'RolesFrom',
-          path: 'roles/form',
-          component: () => import('@/views/container/Roles/RolesForm'),
+          name: "RolesFrom",
+          path: "roles/form",
+          component: () => import("@/views/container/Roles/RolesForm")
         },
-        // site
+        // SolarPower
         {
-          name: 'Site',
-          path: 'site/home',
-          component: () => import('@/views/container/Sites/Sites'),
-
+          name: "SolarPower",
+          path: "solar-power/site",
+          component: () =>
+            import("@/views/container/Sites/SolarPower/SolarPower")
+        },
+        // AmstelUltra
+        {
+          name: "AmstelUltra",
+          path: "amstel-ultra/site",
+          component: () =>
+            import("@/views/container/Sites/AmstelUltra/AmstelUltra")
+        },
+        // Indio
+        {
+          name: "Indio",
+          path: "Indio/site",
+          component: () => import("@/views/container/Sites/Indio/Indio")
+        },
+        // Tecate
+        {
+          name: "Tecate",
+          path: "Tecate/site",
+          component: () => import("@/views/container/Sites/Tecate/Tecate")
+        },
+        // Kitchens
+        {
+          name: "Kitchens",
+          path: "kitchens/kitchens",
+          component: () => import("@/views/container/Kitchens/Kitchens")
         },
         {
-          name: 'Site2',
-          path: 'site/section1',
-          component: () => import('@/views/container/Kitchens/Kitchen-Edit/Kitchen-Edit'),
-
+          name: "Kitchens-Edit",
+          path: "kitchens/kitchens-edit",
+          component: () =>
+            import("@/views/container/Kitchens/Kitchen-Edit/Kitchen-Edit")
         },
         {
-          name: 'Kitchens-Show',
-          path: 'kitchens/kitchens-show',
-          component: () => import('@/views/container/Kitchens/Kitchen-Show/Kitchen-Show'),
-
+          name: "Kitchens-Show",
+          path: "kitchens/kitchens-show",
+          component: () =>
+            import("@/views/container/Kitchens/Kitchen-Show/Kitchen-Show")
         },
-        // Kitchen
+        // Vendors
         {
-          name: 'Vendors',
-          path: 'vendors/vendors',
-          component: () => import('@/views/container/Vendors/Vendors'),
-        },
-
-      ],
+          name: "Vendors",
+          path: "vendors/vendors",
+          component: () => import("@/views/container/Vendors/Vendors")
+        }
+      ]
     },
     {
-      path: '*',
-      component: () => import('@/views/pages/Index'),
+      path: "*",
+      component: () => import("@/views/pages/Index"),
       children: [
         {
-          name: '404 Error',
-          path: '',
-          component: () => import('@/views/pages/Error'),
-        },
-      ],
-    },
-  ],
-})
+          name: "404 Error",
+          path: "",
+          component: () => import("@/views/pages/Error")
+        }
+      ]
+    }
+  ]
+});

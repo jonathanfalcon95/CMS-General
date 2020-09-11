@@ -41,45 +41,44 @@
   "vforms": "Validation Forms",
   "widgets": "Widgets",
   "wizard": "Wizard",
-  "id":"ID",
+  "id": "ID",
   "alert": {
     "confirm": "Confirm this action",
     "errors": "Errors"
   },
-  "users":{
-     "title":"Users",
-     "dni": "DNI",
-     "type":"User Type",
-     "create":"Create User",
-     "edit": "Edit User",
-     "show": "Show User",
-     "id":"ID User",
-     "username":"Username",
-     "name":"Name",
-     "lastname":"Lastname",
-     "fullname":"fullname",
-     "email":"Email",
-     "phone":"Phone",
-     "role":"Role",
-     "address":"address",
-    "pharmacist":"pharmacist",
-    "doctor":"Doctor"
+  "users": {
+    "title": "Users",
+    "dni": "DNI",
+    "type": "User Type",
+    "create": "Create User",
+    "edit": "Edit User",
+    "show": "Show User",
+    "id": "ID User",
+    "username": "Username",
+    "name": "Name",
+    "lastname": "Lastname",
+    "fullname": "fullname",
+    "email": "Email",
+    "phone": "Phone",
+    "role": "Role",
+    "address": "address",
+    "pharmacist": "pharmacist",
+    "doctor": "Doctor"
   },
-  "roles":{
-    "create":"Create Role",
+  "roles": {
+    "create": "Create Role",
     "edit": "Edit Role",
     "show": "Show Role",
-    "title":"Roles",
-    "name":"Rol Name",
-    "status":"Status",
-    "functions":"Functions"
-  
- },
-  "crud":{
-     "create":"Create",
-     "edit":"Edit",
-     "delete":"Delete",
-     "show":"Show"
+    "title": "Roles",
+    "name": "Rol Name",
+    "status": "Status",
+    "functions": "Functions"
+  },
+  "crud": {
+    "create": "Create",
+    "edit": "Edit",
+    "delete": "Delete",
+    "show": "Show"
   },
   "message": {
     "apiError401": "Incorrect credentials",
@@ -89,14 +88,30 @@
     "apiErrorUndefined": "General Application Error",
     "invalidKey": "Invalid key"
   },
-  "kitchens":{
-    "kitchen":"Kitchen",
-    "kitchens":"Kitchens",
-    "kitchen-edit":"Edit Kitchen",
-    "kitchen-show":"Kitchen"
+  "kitchens": {
+    "kitchen": "Kitchen",
+    "kitchens": "Kitchens",
+    "kitchen-edit": "Edit Kitchen",
+    "kitchen-show": "Kitchen"
   },
-  "vendors":{
-    "vendor":"Vendor",
-    "vendors":"Vendors"
+  "vendors": {
+    "vendor": "Vendor",
+    "vendors": "Vendors"
+  },
+  "solar-power": {
+    "title": "Solar Power",
+    "site": "Site"
+  },
+  "amstel-ultra": {
+    "title": "Amstel Ultra",
+    "site": "Site"
+  },
+  "indio": {
+    "title": "Indio",
+    "site": "Site"
+  },
+  "tecate": {
+    "title": "Tecate",
+    "site": "Site"
   }
 }
