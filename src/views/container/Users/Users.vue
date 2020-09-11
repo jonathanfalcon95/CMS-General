@@ -1,8 +1,5 @@
 <template>
-  <v-container
-    id="data-tables"
-    tag="section"
-  >
+  <v-container id="data-tables" tag="section">
     <base-material-card
       color="indigo"
       icon="mdi-vuetify"
@@ -38,7 +35,6 @@
       >
         <template v-slot:item.actions="{ item }">
           <v-btn
-
             :key="1"
             color="blue"
             fab
@@ -46,13 +42,9 @@
             x-small
             @click="showUser(item)"
           >
-            <v-icon
-              small
-              v-text="'mdi-eye'"
-            />
+            <v-icon small v-text="'mdi-eye'" />
           </v-btn>
           <v-btn
-
             :key="2"
             color="primary"
             fab
@@ -60,13 +52,9 @@
             x-small
             @click="editUser(item)"
           >
-            <v-icon
-              small
-              v-text="'mdi-pencil'"
-            />
+            <v-icon small v-text="'mdi-pencil'" />
           </v-btn>
           <v-btn
-
             :key="3"
             color="secondary"
             fab
@@ -74,10 +62,7 @@
             x-small
             @click="deleteUser(item)"
           >
-            <v-icon
-              small
-              v-text="'mdi-delete'"
-            />
+            <v-icon small v-text="'mdi-delete'" />
           </v-btn>
         </template>
       </v-data-table>
@@ -102,108 +87,108 @@
 </template>
 
 <script>
-  import { getUsers } from '@/api/modules'
-  import i18n from '@/i18n'
-  import userjson from './user.json'
-  export default {
-    name: 'DashboardDataTables',
+import { getUsers } from "@/api/modules";
+import i18n from "@/i18n";
+import userjson from "./user.json";
+export default {
+  name: "DashboardDataTables",
 
-    data: () => ({
-      hidden: false,
-      title: userjson.title,
-      headers: [
-        {
-          text: i18n.t('users.id'),
-          value: 'person.id',
-        },
-        {
-          text: i18n.t('users.name'),
-          value: 'person.fullname',
-        },
-        {
-          text: i18n.t('users.email'),
-          value: 'person.email',
-        },
-        {
-          text: i18n.t('users.phone'),
-          value: 'person.phone_number',
-        },
-        {
-          sortable: false,
-          text: 'Actions',
-          value: 'actions',
-        },
-      ],
-      items: [
-        {
-          person: {
-            id: 1,
-            fullname: 'algo',
-            email: 'este@gmail.com',
-            phone_number: '2323232323',
-          },
-        },
-        {
-          person: {
-            id: 1,
-            fullname: 'algo',
-            email: 'este@gmail.com',
-            phone_number: '2323232323',
-          },
-        },
-      ],
-      search: undefined,
-      searchLabel: 'undefined',
-    }),
-    async mounted () {
-      // window.getApp.$emit("SHOW_ERROR", "34534535")
-    },
-    methods: {
-      async loadUsersData () {
-        console.log('mounted')
-        let serviceResponse = await getUsers()
-        if (serviceResponse.ok === 1) {
-          console.log(serviceResponse)
-          this.items = serviceResponse.data
-        } else {
-          console.log(serviceResponse)
-          const params = { text: serviceResponse.message.text }
-          window.getApp.$emit('SHOW_ERROR', params)
+  data: () => ({
+    hidden: false,
+    title: userjson.title,
+    headers: [
+      {
+        text: i18n.t("users.id"),
+        value: "person.id"
+      },
+      {
+        text: i18n.t("users.name"),
+        value: "person.fullname"
+      },
+      {
+        text: i18n.t("users.email"),
+        value: "person.email"
+      },
+      {
+        text: i18n.t("users.phone"),
+        value: "person.phone_number"
+      },
+      {
+        sortable: false,
+        text: "Actions",
+        value: "actions"
+      }
+    ],
+    items: [
+      {
+        person: {
+          id: 1,
+          fullname: "Ana Castillo",
+          email: "ana.castillo@amstalultra.com",
+          phone_number: "2323232323"
         }
       },
-      createUser () {
-        console.log('create')
-        this.$router.push({
-          name: 'UsersFrom',
-          params: {
-            option: 1, // option 1 to create
-          },
-        })
-      },
-      showUser (item) {
-        console.log(item)
-        this.$router.push({
-          name: 'UsersFrom',
-          params: {
-            option: 2, // option 2 to show
-            userData: item,
-          },
-        })
-      },
-      editUser (item) {
-        console.log(item)
-        this.$router.push({
-          name: 'UsersFrom',
-          params: {
-            option: 3, // option 3 to edit
-            userData: item,
-          },
-        })
-      },
-      deleteUser (item) {
-        console.log(item)
-        console.log('Delete')
-      },
+      {
+        person: {
+          id: 2,
+          fullname: "Jose Lovera",
+          email: "jose.lovera@solarpower.com",
+          phone_number: "2323232323"
+        }
+      }
+    ],
+    search: undefined,
+    searchLabel: "undefined"
+  }),
+  async mounted() {
+    // window.getApp.$emit("SHOW_ERROR", "34534535")
+  },
+  methods: {
+    async loadUsersData() {
+      console.log("mounted");
+      let serviceResponse = await getUsers();
+      if (serviceResponse.ok === 1) {
+        console.log(serviceResponse);
+        this.items = serviceResponse.data;
+      } else {
+        console.log(serviceResponse);
+        const params = { text: serviceResponse.message.text };
+        window.getApp.$emit("SHOW_ERROR", params);
+      }
     },
+    createUser() {
+      console.log("create");
+      this.$router.push({
+        name: "UsersFrom",
+        params: {
+          option: 1 // option 1 to create
+        }
+      });
+    },
+    showUser(item) {
+      console.log(item);
+      this.$router.push({
+        name: "UsersFrom",
+        params: {
+          option: 2, // option 2 to show
+          userData: item
+        }
+      });
+    },
+    editUser(item) {
+      console.log(item);
+      this.$router.push({
+        name: "UsersFrom",
+        params: {
+          option: 3, // option 3 to edit
+          userData: item
+        }
+      });
+    },
+    deleteUser(item) {
+      console.log(item);
+      console.log("Delete");
+    }
   }
+};
 </script>
